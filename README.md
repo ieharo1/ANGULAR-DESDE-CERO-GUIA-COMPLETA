@@ -1,18 +1,18 @@
-# 🐹 GOLANG DESDE CERO - GUÍA COMPLETA
+# 🅰️ ANGULAR DESDE CERO - GUÍA COMPLETA
 
-**Golang desde Cero** es un sitio educativo completo diseñado para enseñar Go desde los fundamentos hasta conceptos avanzados, con explicaciones claras, ejemplos prácticos y código listo para usar.
+**Angular desde Cero** es un sitio educativo completo diseñado para enseñar Angular desde los fundamentos hasta conceptos avanzados, con explicaciones claras, ejemplos prácticos y código listo para usar.
 
-> *"Go is an open source programming language supported by Google that makes it easy to build simple, reliable, and efficient software."*
+> *"Angular es el framework de Google para construir aplicaciones web modernas y escalables."*
 
 ---
 
 ## 🎯 ¿Qué es este Proyecto?
 
-Este proyecto proporciona un recurso educativo gratuito para aprender Go, incluyendo:
+Este proyecto proporciona un recurso educativo gratuito para aprender Angular, incluyendo:
 
 - **Documentación completa** de cada tema
 - **Ejemplos de código** listos para ejecutar
-- **Ejercicios prácticos** para reforzar el aprendizaje
+- **Guías paso a paso** para configuración
 - **Sitio web educativo** con navegación intuitiva
 
 ---
@@ -22,55 +22,55 @@ Este proyecto proporciona un recurso educativo gratuito para aprender Go, incluy
 ### Módulo 1: Fundamentos
 
 1. **Introducción**
-   - Historia de Go
-   - Filosofía del lenguaje
-   - Casos de uso (Cloud, CLI, Microservicios)
+   - ¿Qué es Angular?
+   - Diferencias con AngularJS
+   - Arquitectura de componentes
 
-2. **Instalación**
-   - Go en Windows, Mac, Linux
-   - Configuración de GOPATH y GOMOD
-   - Go modules
-   - IDEs recomendados (VS Code, GoLand)
+2. **Configuración**
+   - Node.js y npm
+   - Angular CLI
+   - TypeScript básico
+   - Primer proyecto
 
-3. **Conceptos básicos**
-   - Variables y tipos de datos
-   - Funciones múltiples returns
-   - Control de flujo
-   - Punteros básicos
+3. **Componentes**
+   - Crear componentes
+   - Templates y estilos
+   - Data binding
+   - Comunicación entre componentes
 
 ### Módulo 2: Intermedio
 
-4. **Ejemplos prácticos**
-   - Structs y métodos
-   - Interfaces
-   - Manejo de errores
-   - Concurrencia (goroutines, channels)
+4. **Directivas**
+   - Directivas estructurales (ngIf, ngFor, ngSwitch)
+   - Directivas de atributos (ngClass, ngStyle)
+   - Directivas personalizadas
 
-5. **Buenas prácticas**
-   - Effective Go
-   - Testing con testing package
-   - Benchmarking
-   - Documentación con godoc
+5. **Servicios y DI**
+   - Inyección de dependencias
+   - Crear servicios
+   - HttpClient y APIs
+   - Observables
 
 ### Módulo 3: Avanzado
 
-6. **Casos reales**
-   - APIs HTTP/REST
-   - gRPC y Protocol Buffers
-   - Microservicios
-   - CLI tools con Cobra
+6. **Routing**
+   - Configurar rutas
+   - Navegación
+   - Guards (protección de rutas)
+   - Lazy loading
 
-7. **Proyecto final**
-   - Servicio completo concurrente
-   - Deploy con Docker
-   - CI/CD pipeline
+7. **Formularios**
+   - Formularios reactivos
+   - Formularios por template
+   - Validaciones
+   - Mensajes de error
 
 ---
 
 ## 🗂️ Estructura del Proyecto
 
 ```
-Herencia_Interfaces/
+ANGULAR-DESDE-CERO-GUIA-COMPLETA/
 ├── index.html          # Página principal
 ├── css/
 │   └── styles.css      # Estilos del sitio
@@ -89,150 +89,41 @@ Herencia_Interfaces/
 2. Navega por las secciones del curso
 3. Haz clic en los temas para ver la documentación detallada
 
-### Opción 2: Ejecutar los Ejemplos
+### Opción 2: Practicar con Angular
 
-1. Instala Go desde go.dev
-2. Crea archivo .go
-3. Ejecuta con `go run archivo.go`
-
-### Requisitos
-
-- **Go 1.20** o superior
-- Editor de código (VS Code con extensión Go)
+1. Instala Node.js desde nodejs.org
+2. Instala Angular CLI: `npm install -g @angular/cli`
+3. Crea proyecto: `ng new mi-app`
+4. Practica los conceptos del curso
 
 ---
 
-## 📝 Ejemplos Rápidos
+## 📝 Comandos Principales
 
-### Variables y Tipos
+### Angular CLI
 
-```go
-package main
-
-import "fmt"
-
-func main() {
-    var nombre string = "Juan"
-    edad := 30
-    const PI = 3.1416
-    
-    var (
-        usuario = "admin"
-        activo  = true
-    )
-    
-    fmt.Println(nombre, edad, PI, usuario, activo)
-}
+```bash
+ng new mi-app              # Crear proyecto
+ng serve                   # Iniciar servidor
+ng generate component nom  # Crear componente
+ng generate service nom    # Crear servicio
+ng generate guard nom      # Crear guard
+ng generate module nom     # Crear módulo
 ```
 
-### Funciones
+### Componentes
 
-```go
-package main
-
-import "fmt"
-
-// Múltiples retornos
-func dividir(a, b float64) (float64, error) {
-    if b == 0 {
-        return 0, fmt.Errorf("división por cero")
-    }
-    return a / b, nil
-}
-
-// Función variádica
-func sumar(numeros ...int) int {
-    total := 0
-    for _, n := range numeros {
-        total += n
-    }
-    return total
-}
+```bash
+ng g c nombre              # Componente
+ng g c nombre --standalone # Componente standalone
+ng g c shared/btn          # Componente compartido
 ```
 
-### Structs y Métodos
+### Servicios
 
-```go
-package main
-
-import "fmt"
-
-type Persona struct {
-    Nombre string
-    Edad   int
-}
-
-func (p Persona) Saludar() string {
-    return "Hola, soy " + p.Nombre
-}
-
-func (p *Persona) CumplirAnios() {
-    p.Edad++
-}
-
-func main() {
-    juan := Persona{Nombre: "Juan", Edad: 30}
-    fmt.Println(juan.Saludar())
-}
-```
-
-### Interfaces
-
-```go
-package main
-
-import "fmt"
-
-type Hablador interface {
-    Hablar() string
-}
-
-type Persona struct {
-    Nombre string
-}
-
-func (p Persona) Hablar() string {
-    return "Hola, soy " + p.Nombre
-}
-
-func saludar(h Hablador) {
-    fmt.Println(h.Hablar())
-}
-```
-
-### Concurrencia
-
-```go
-package main
-
-import (
-    "fmt"
-    "time"
-)
-
-func trabajador(id int, jobs <-chan int, results chan<- int) {
-    for job := range jobs {
-        results <- job * 2
-    }
-}
-
-func main() {
-    jobs := make(chan int, 10)
-    results := make(chan int, 10)
-    
-    for w := 1; w <= 3; w++ {
-        go trabajador(w, jobs, results)
-    }
-    
-    for j := 1; j <= 5; j++ {
-        jobs <- j
-    }
-    close(jobs)
-    
-    for r := 1; r <= 5; r++ {
-        fmt.Println(<-results)
-    }
-}
+```bash
+ng g s servicios/datos     # Servicio
+ng g s core/auth --root    # Servicio singleton
 ```
 
 ---
@@ -242,43 +133,31 @@ func main() {
 ### 1. Leer la Teoría
 Cada tema comienza con una explicación clara del concepto.
 
-### 2. Ver Ejemplos
+### 2. Ver los Ejemplos
 Los ejemplos de código muestran la aplicación práctica.
 
 ### 3. Practicar
-Los ejercicios te permiten aplicar lo aprendido.
+Crea tu propio proyecto y experimenta con los conceptos.
 
-### 4. Experimentar
-Modifica los ejemplos para entender cómo funcionan.
+### 4. Construir
+Desarrolla una aplicación completa integrando todo lo aprendido.
 
 ---
 
-## 🔧 Comandos Esenciales
+## 🔧 Herramientas Recomendadas
 
-### Terminal/Consola
+### Editores
 
-```bash
-# Ver versión de Go
-go version
+- **VS Code** - Recomendado con extensión Angular
+- **WebStorm** - IDE profesional con soporte Angular
+- **Sublime Text** - Ligero y configurable
 
-# Inicializar módulo
-go mod init mi-proyecto
+### Extensiones VS Code
 
-# Descargar dependencias
-go mod tidy
-
-# Ejecutar programa
-go run main.go
-
-# Compilar
-go build -o mi-app
-
-# Ejecutar tests
-go test ./...
-
-# Formatear código
-go fmt ./...
-```
+- Angular Language Service
+- Angular Snippets
+- TypeScript Hero
+- Prettier
 
 ---
 
@@ -286,54 +165,40 @@ go fmt ./...
 
 ### Documentación Oficial
 
-- [Go Documentation](https://go.dev/doc/)
-- [Go by Example](https://gobyexample.com/)
-- [Effective Go](https://go.dev/doc/effective_go)
-
-### Herramientas Recomendadas
-
-- **VS Code** + Go extension
-- **GoLand** - IDE profesional de JetBrains
-- **golangci-lint** - Linter rápido
-- **Delve** - Debugger para Go
+- [Angular Documentation](https://angular.io/docs)
+- [Angular CLI](https://angular.io/cli)
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/)
 
 ### Comunidades
 
-- [Go Community](https://go.dev/community/)
-- [Stack Overflow - Go](https://stackoverflow.com/questions/tagged/go)
-- [Reddit r/golang](https://www.reddit.com/r/golang/)
+- [Angular Reddit](https://reddit.com/r/Angular2/)
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/angular)
+- [Angular Discord](https://discord.gg/angular)
 
 ---
 
 ## 💡 Consejos para Principiantes
 
-1. **Aprende el manejo de errores**: Es fundamental en Go.
-2. **Usa goroutines temprano**: La concurrencia es poderosa.
-3. **Sigue Effective Go**: Estilo consistente desde el inicio.
-4. **Prueba todo**: Testing es primera clase en Go.
-5. **Mantén simple**: Go valora simplicidad sobre complejidad.
+1. **Aprende TypeScript** - Angular usa TypeScript por defecto
+2. **Entiende RxJS** - Fundamental para servicios y estado
+3. **Practica componentes** - Son la base de Angular
+4. **Usa Angular CLI** - Facilita el desarrollo
+5. **Sigue las convenciones** - Mantén código limpio
 
 ---
 
-## ⚠️ Mejores Prácticas
+## ⚠️ Errores Comunes
 
-### Código Limpio
+```typescript
+// Error: No imports en el módulo
+// Solución: Importar en app.module.ts
 
-- Sigue Effective Go
-- Usa nombres cortos pero descriptivos
-- Maneja errores explícitamente
+// Error: NullInjectorError
+// Solución: Agregar servicio al providers
 
-### Concurrencia
-
-- Usa channels para comunicación
-- Evita race conditions con `go test -race`
-- Usa sync.WaitGroup cuando necesites esperar
-
-### Rendimiento
-
-- Usa benchmarks para medir
-- Evita allocations innecesarias
-- Pool de objetos cuando sea necesario
+// Error: Expression changed after check
+// Solución: Usar ChangeDetectorRef o ngZone
+```
 
 ---
 
@@ -341,21 +206,24 @@ go fmt ./...
 
 ### Nivel Básico
 
-1. Calculadora de operaciones básicas
-2. Conversor de temperaturas
-3. Juego de adivinar números
+1. Crear un componente simple con data binding
+2. Usar directivas ngFor y ngIf
+3. Crear un servicio básico
+4. Configurar rutas simples
 
 ### Nivel Intermedio
 
-1. API REST con net/http
-2. CLI tool para procesar archivos
-3. Worker pool concurrente
+1. Formulario con validaciones
+2. Consumir API con HttpClient
+3. Crear un guard de autenticación
+4. Implementar lazy loading
 
 ### Nivel Avanzado
 
-1. Microservicio con gRPC
-2. Sistema distribuido con channels
-3. Herramienta de monitoring
+1. Aplicación completa con auth
+2. Gestionar estado con services
+3. Testing con Jasmine/Karma
+4. Optimizar rendimiento
 
 ---
 

@@ -1,7 +1,7 @@
-// Main JavaScript para Golang Desde Cero
+// Main JavaScript para Angular Desde Cero
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('🐹 Golang Desde Cero - Sitio cargado correctamente');
+    console.log('☕ Angular Desde Cero - Sitio cargado correctamente');
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -46,8 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', () => {
         const header = document.querySelector('.header');
         if (window.pageYOffset > 100) {
-            header.style.background = 'rgba(0, 86, 108, 0.98)';
-            header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            header.style.background = 'rgba(178, 88, 10, 0.98)';
+            header.style.boxShadow = '0 4px 30px rgba(248, 152, 32, 0.3)';
         } else {
             header.style.background = 'var(--secondary-color)';
             header.style.boxShadow = 'none';
@@ -68,5 +68,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    console.log('%c🐹 ¡Bienvenido a Golang Desde Cero!', 'font-size: 20px; color: #00ADD8; font-weight: bold;');
+    console.log('%c☕ ¡Bienvenido a Angular Desde Cero!', 'font-size: 20px; color: #dd0031; font-weight: bold;');
 });
